@@ -1,0 +1,67 @@
+# TB tokens
+
+# TB tf
+ww -> lib grandmother investigator
+lib -> ww balloonist investigator grandmother
+investigator -> towncrier lib ww grandmother
+chef -> clockmaker investigator grandmother
+mayor -> cult_leader
+ravenkeeper -> sage banshee pacifist fool moonchild klutz
+soldier -> fool sage banshee innkeeper professor
+monk -> innkeeper tealady lycanthrope
+slayer -> exorcist courtier alsaahir psychopath
+fortune_teller -> bountyhunter chambermaid flowergirl 
+empath -> tealady clockmaker oracle villageidiot
+undertaker -> cannibal gambler ravenkeeper
+virgin -> towncrier mutant
+
+# TB out
+drunk -> lunatic marionette sweetheart tinker
+butler -> ogre zealot klutz moonchild
+saint -> klutz moonchild heretic damsel
+recluse -> cultleader mutant
+
+# TB minion
+poisoner -> cerenovus snake_charmer sailor 
+spy -> widow boffin mastermind
+baron -> godfather xaan boffin evil_twin
+scarlet_woman -> mastermind summoner
+
+# TB demon
+imp -> fanggu po vigor_mortis riot
+
+# TB reminders
+#TODO
+# SV tokens
+
+snakecharmer -> fortuneteller sage exorcist
+towncrier -> undertaker virgin
+philosopher -> professor virgin saint goon
+
+
+
+# Experimental tokens
+
+# Experimental TF
+noble -> investigator juggler clockmaker
+noble_seen -> investigator_wrong investigator_minion librarian_outsider librarian_wrong juggler_correct
+pixie -> washerwoman librarian mutant
+pixie_mad -> cerenovus_mad harpy_mad butler_master eviltwin_twin
+pixie_hasability -> 
+bountyhunter -> investigator towncrier seamstress fortuneteller soldier
+highpriestess -> monk librarian grandmother courtier
+preacher -> exorcist sailor innkeeper
+villageidiot -> imp farmer fool sailor savant
+cannibal -> undertaker minstrel
+
+# Experimental out
+hatter -> barber goon butler
+puzzlemaster -> sweetheart moonchild mathematician
+
+# Experimental minions
+widow -> spy mastermind witch boffin
+
+# Experimental demons
+ojo -> po pukka
+legion -> fanggu po shabaloth vigormortis nodashii zombuul pukka imp recluse
+
