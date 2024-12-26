@@ -1,43 +1,179 @@
-# TB tokens
-
-# TB tf
-ww -> lib grandmother investigator
-lib -> ww balloonist investigator grandmother
-investigator -> towncrier lib ww grandmother
+# TB
+# TB TF
+washerwoman -> librarian grandmother investigator
+washerwoman_townsfolk -> librarian_outsider grandmother_grandchild
+washerwoman_wrong -> librarian_wrong investigator_wrong grandmother_dead eviltwin_twin
+librarian -> washerwoman balloonist investigator grandmother
+librarian_outsider -> washerwoman_townsfolk grandmother_grandchild sailor_drunk eviltwin_twin
+librarian_wrong -> washerwoman_wrong investigator_wrong grandmother_dead eviltwin_twin
+investigator -> towncrier librarian washerwoman grandmother
+investigator_minion -> towncrier_minionnominated librarian_townsfolk washerwoman_townsfolk grandmother_grandchild
+investigator_wrong -> towncrier_minionnotnominated librarian_wrong washerwoman_wrong grandmother_dead
 chef -> clockmaker investigator grandmother
-mayor -> cult_leader
-ravenkeeper -> sage banshee pacifist fool moonchild klutz
-soldier -> fool sage banshee innkeeper professor
-monk -> innkeeper tealady lycanthrope
-slayer -> exorcist courtier alsaahir psychopath
-fortune_teller -> bountyhunter chambermaid flowergirl 
 empath -> tealady clockmaker oracle villageidiot
-undertaker -> cannibal gambler ravenkeeper
+fortuneteller -> bountyhunter chambermaid flowergirl 
+fortuneteller_redherring -> librarian_outsider mathematician_abnormal goon_drunk
+undertaker -> cannibal gambler ravenkeeper oracle
+# TODO improve
+undertaker_executed -> cannibal_lunch gambler_dead
+monk -> innkeeper tealady lycanthrope
+monk_protected -> innkeeper_protected tealady_cannotdie
+ravenkeeper -> sage banshee pacifist fool moonchild klutz
 virgin -> towncrier mutant
+virgin_noability -> seamstress_noability artist_noability
+slayer -> exorcist courtier alsaahir psychopath
+slayer_noability -> seamstress_noability artist_noability
+soldier -> fool sage banshee innkeeper professor
+mayor -> cult_leader
 
-# TB out
-drunk -> lunatic marionette sweetheart tinker
+# TB outsiders
 butler -> ogre zealot klutz moonchild
-saint -> klutz moonchild heretic damsel
+butler_master -> 
+drunk -> lunatic marionette sweetheart tinker
+drunk_drunk -> 
 recluse -> cultleader mutant
+saint -> klutz moonchild heretic damsel
 
 # TB minion
 poisoner -> cerenovus snake_charmer sailor 
+poisoner_poisoned -> 
 spy -> widow boffin mastermind
+scarletwoman -> mastermind summoner
+scarletwoman_demon -> 
 baron -> godfather xaan boffin evil_twin
-scarlet_woman -> mastermind summoner
 
 # TB demon
 imp -> fanggu po vigor_mortis riot
+imp -> 
+imp_dead -> 
 
-# TB reminders
-#TODO
-# SV tokens
-
-snakecharmer -> fortuneteller sage exorcist
-towncrier -> undertaker virgin
+# SV
+# SV TF
+clockmaker -> 
+dreamer -> 
+mathematician -> 
+mathematician_abnormal -> 
+flowergirl -> 
+flowergirl_demonvoted -> 
+flowergirl_demonnotvoted -> 
+oracle -> 
+savant -> 
+seamstress -> 
+seamstress_noability -> 
 philosopher -> professor virgin saint goon
+philosopher_drunk -> 
+philosopher_isthephilosopher -> 
+artist -> 
+artist_noability -> 
+juggler -> 
+juggler_correct -> 
+sage -> 
+snakecharmer -> fortuneteller sage exorcist
+snakecharmer_poisoned -> 
+towncrier -> undertaker virgin
+towncrier_minionsnotnominated -> 
+towncrier_minionnominated -> 
 
+# SV outsiders
+mutant -> 
+sweetheart -> 
+sweetheart_drunk -> 
+barber -> 
+barber_haircutstonight -> 
+klutz -> 
+
+# SV minions
+eviltwin -> 
+eviltwin_twin -> 
+witch -> 
+witch_cursed -> 
+cerenovus -> 
+cerenovus_mad -> 
+pithag -> 
+
+# SV Demons
+fanggu -> 
+fanggu_dead -> 
+fanggu_once -> 
+vigormortis -> 
+vigormortis_dead -> 
+vigormortis_hasability -> 
+vigormortis_poisoned -> 
+nodashii -> 
+nodashii_dead -> 
+nodashii_poisoned -> 
+vortox -> 
+vortox_dead -> 
+
+# BMR
+# BMR TF
+grandmother -> 
+grandmother_grandchild -> 
+grandmother_dead -> 
+sailor -> 
+sailor_drunk -> 
+chambermaid -> 
+exorcist -> 
+exorcist_chosen -> 
+innkeeper -> 
+innkeeper_protected -> 
+innkeeper_drunk -> 
+gambler -> 
+gambler_dead -> 
+gossip -> 
+gossip_dead -> 
+courtier -> 
+courtier_drunk3 -> 
+courtier_drunk2 -> 
+courtier_drunk1 -> 
+courtier_noability -> 
+professor -> 
+professor_alive -> 
+professor_noability -> 
+minstrel -> 
+minstrel_everyonedrunk -> 
+tealady -> 
+tealady_cannotdie -> 
+pacifist -> 
+fool -> 
+fool_noability -> 
+
+# BMR outsiders
+tinker -> 
+tinker_dead -> 
+moonchild -> 
+moonchild_dead -> 
+goon -> 
+goon_drunk -> 
+lunatic -> 
+lunatic_attack1 -> 
+lunatic_attack2 -> 
+lunatic_attack3 -> 
+
+# BMR minions
+godfather -> 
+godfather_diedtoday -> 
+godfather_dead -> 
+devilsadvocate -> 
+devilsadvocate_survivesexecution -> 
+assassin -> 
+assassin_dead -> 
+assassin_noability -> 
+mastermind -> 
+
+# BMR demons
+zombuul -> 
+zombuul_diedtoday -> 
+zombuul_dead -> 
+pukka -> 
+pukka_poisoned -> 
+pukka_dead -> 
+shabaloth -> 
+shabaloth_dead -> 
+shabaloth_alive -> 
+po -> 
+po_dead -> 
+po_3attacks -> 
 
 
 # Experimental tokens
@@ -49,19 +185,132 @@ pixie -> washerwoman librarian mutant
 pixie_mad -> cerenovus_mad harpy_mad butler_master eviltwin_twin
 pixie_hasability -> 
 bountyhunter -> investigator towncrier seamstress fortuneteller soldier
+bountyhunter_known -> 
 highpriestess -> monk librarian grandmother courtier
 preacher -> exorcist sailor innkeeper
+preacher_atasermon -> 
 villageidiot -> imp farmer fool sailor savant
 cannibal -> undertaker minstrel
+alsaahir -> 
+steward -> 
+steward_known -> 
+knight -> 
+knight_known -> 
+shugenja -> 
+general -> 
+king -> 
+balloonist -> 
+balloonist_seen -> 
+cultleader -> 
+lycanthrope -> 
+lycanthrope_dead -> 
+lycanthrope_fauxpaw -> 
+amnesiac -> 
+amnesiac_? -> 
+nightwatchman -> 
+nightwatchman_noability -> 
+engineer -> 
+engineer_noability -> 
+fisherman -> 
+fisherman_noability -> 
+huntsman -> 
+huntsman_noability -> 
+alchemist -> 
+alchemist_isthealchemist -> 
+farmer -> 
+magician -> 
+choirboy -> 
+poppygrower -> 
+poppygrower_evilwakes -> 
+atheist -> 
+cannibal_poisoned -> 
+cannibal_lunch -> 
+villageidiot_drunk -> 
+banshee -> 
+banshee_hasability -> 
 
 # Experimental out
 hatter -> barber goon butler
+hatter_teapartytonight -> 
 puzzlemaster -> sweetheart moonchild mathematician
+puzzlemaster_drunk -> 
+puzzlemaster_guessused -> 
+snitch -> 
+acrobat -> 
+acrobat_dead -> 
+plaguedoctor -> 
+plaguedoctor_storytellerability -> 
+ogre -> 
+heretic -> 
+damsel -> 
+damsel_guessused -> 
+golem -> 
+golem_cannotnominate -> 
+politician -> 
+zealot -> 
 
 # Experimental minions
 widow -> spy mastermind witch boffin
-
+widow_poisoned -> 
+fearmonger -> 
+fearmonger_fear -> 
+psychopath -> 
+goblin -> 
+goblin_claimed -> 
+mezepheles -> 
+mezepheles_turnsevil -> 
+mezepheles_noability -> 
+marionette -> 
+marionette_isthemarionette -> 
+boomdandy -> 
+organgrinder -> 
+organgrinder_aboutto die -> 
+harpy -> 
+harpy_mad -> 
+harpy_2nd -> 
+summoner -> 
+summoner_night1 -> 
+summoner_night2 -> 
+summoner_night3 -> 
+boffin -> 
+vizier -> 
+xaan -> 
+xaan_night1 -> 
+xaan_night2 -> 
+xaan_night3 -> 
+xaan_x -> 
 # Experimental demons
 ojo -> po pukka
+ojo_dead -> 
 legion -> fanggu po shabaloth vigormortis nodashii zombuul pukka imp recluse
-
+legion_dead -> 
+legion_abouttodie -> 
+lilmonsta -> 
+lilmonsta_isthedemon -> 
+lilmonsta_dead -> 
+lleech -> 
+lleech_dead -> 
+lleech_poisoned -> 
+alhadikhia -> 
+alhadikhia_1 -> 
+alhadikhia_2 -> 
+alhadikhia_3 -> 
+alhadikhia_chosedeath -> 
+alhadikhia_choselife -> 
+leviathan -> 
+leviathan_day1 -> 
+leviathan_day2 -> 
+leviathan_day3 -> 
+leviathan_day4 -> 
+leviathan_day5 -> 
+leviathan_goodplayerexecuted -> 
+riot -> 
+riot_night1 -> 
+riot_night2 -> 
+riot_night3 -> 
+kazali -> 
+kazali_dead -> 
+yaggababble -> 
+yaggababble_dead -> 
+lordoftyphon -> 
+lordoftyphon_dead -> 
