@@ -1,7 +1,7 @@
 // Utility for generating preferences list
 // Use as `deno run -A ./tools/generate.js ./preferences.human > preferences.json`
 
-import { chars } from './data.js';
+import { chars } from '../data.js';
 
 
 export function generate(text) {
@@ -11,7 +11,7 @@ export function generate(text) {
     .map(line => line.split(' -> '))
     .filter(([_, os]) => os !== '')
     .map(([i, os]) => ([i.trim(), os.split(' ')]))
-    .reduce((acc, [k, vs]) => ({...acc, [k]: vs}), {})
+    .reduce((acc, [k, vs]) => ({...acc, [k]: [k, ...vs]}), {})
   return o;
 }
 console.log(Deno.args);
