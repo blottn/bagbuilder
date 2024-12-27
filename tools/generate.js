@@ -1,7 +1,7 @@
 // Utility for generating preferences list
 // Use as `deno run -A ./tools/generate.js ./data/preferences.human > data/preferences.json`
 
-import { chars } from '../lib/data.js';
+import { chars } from '../lib/chars.js';
 
 export function generate(text) {
   let o = text.split('\n')
@@ -15,4 +15,4 @@ export function generate(text) {
 }
 
 let t = await Deno.readTextFile(Deno.args[0]);
-console.log(generate(t));
+console.log(JSON.stringify(generate(t)));
