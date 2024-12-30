@@ -9,6 +9,44 @@
   .tok-block {
     border-bottom: 1px dashed grey;
   }
+
+  .tok-proxies {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .tok-header {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .proxy {
+    font-size: 14px;
+  }
+
+  [preferred] {
+    order: -1;
+  }
+
+  .proxy:not([preferred]) {
+    display: none;
+  }
+
+  [state="picked"] {
+    order: -2;
+    color: deeppink;
+  }
+
+  [state="unavailable"] {
+    order: 1;
+    color: #aaa;
+  }
+  [state="inuse"] {
+    order: 2;
+    color: red;
+  }
 </style>
 <div>
   <div id="root">
