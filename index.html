@@ -30,7 +30,7 @@
     order: -1;
   }
 
-  .proxy:not([preferred]) {
+  [hideunpreferred] .proxy:not([preferred]) {
     display: none;
   }
 
@@ -49,7 +49,7 @@
   }
 </style>
 <div>
-  <div id="root">
+  <div id="root" hideunpreferred >
   </div>
   <script type="module" src="./index.js"></script>
 </div>

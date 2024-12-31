@@ -181,9 +181,11 @@ po_3attacks ->
 # Experimental TF
 noble -> investigator juggler clockmaker
 noble_seen -> investigator_wrong investigator_minion librarian_outsider librarian_wrong juggler_correct
-pixie -> washerwoman librarian mutant
-pixie_mad -> cerenovus_mad harpy_mad butler_master eviltwin_twin
-pixie_hasability -> 
+noble_seen2 -> investigator_wrong investigator_minion librarian_outsider librarian_wrong juggler_correct
+noble_seen3 -> investigator_wrong investigator_minion librarian_outsider librarian_wrong juggler_correct
+pixie -> washerwoman librarian flowergirl mutant lunatic
+pixie_mad -> cerenovus_mad lunatic_attack1 lunatic_attack2 lunatic_attack3 harpy_mad butler_master eviltwin_twin
+pixie_hasability -> lunatic_attack1 lunatic_attack2 lunatic_attack3
 bountyhunter -> investigator towncrier seamstress fortuneteller soldier
 bountyhunter_known -> 
 highpriestess -> monk librarian grandmother courtier
