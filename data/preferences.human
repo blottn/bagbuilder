@@ -183,20 +183,23 @@ noble -> investigator juggler clockmaker
 noble_seen -> investigator_wrong investigator_minion librarian_outsider librarian_wrong juggler_correct
 noble_seen2 -> investigator_wrong investigator_minion librarian_outsider librarian_wrong juggler_correct
 noble_seen3 -> investigator_wrong investigator_minion librarian_outsider librarian_wrong juggler_correct
-pixie -> washerwoman librarian flowergirl mutant lunatic
-pixie_mad -> cerenovus_mad lunatic_attack1 lunatic_attack2 lunatic_attack3 harpy_mad butler_master eviltwin_twin
-pixie_hasability -> lunatic_attack1 lunatic_attack2 lunatic_attack3
+pixie -> washerwoman librarian goon mutant lunatic
+pixie_mad -> cerenovus_mad flowergirl_demonnotvoted flowergirl_demonvoted lunatic_attack1 lunatic_attack2 lunatic_attack3 harpy_mad butler_master eviltwin_twin
+pixie_hasability -> flowergirl_demonvoted flowergirl_demonnotvoted lunatic_attack1 lunatic_attack2 lunatic_attack3
 bountyhunter -> investigator towncrier seamstress fortuneteller soldier
-bountyhunter_known -> 
-highpriestess -> monk librarian grandmother courtier
+bountyhunter_known -> investigator_minion
+highpriestess -> oracle monk librarian grandmother courtier
 preacher -> exorcist sailor innkeeper
-preacher_atasermon -> 
+preacher_atasermon -> exorcist_chosen
 villageidiot -> farmer fool sailor savant imp 
-cannibal -> undertaker minstrel
-alsaahir -> 
-steward -> 
-steward_known -> 
-knight -> 
+villageidiot_drunk -> drunk_drunk philosopher_drunk courtier_drunk1 courtier_drunk2 courtier_drunk3
+cannibal -> undertaker minstrel towncrier
+cannibal_lunch -> undertaker_executed towncrier_minionnominated towncrier_minionsnotnominated
+cannibal_poisoned -> minstrel_everyonedrunk courtier_drunk1 courtier_drunk2 courtier_drunk3
+alsaahir -> slayer sage oracle
+steward -> washerwoman grandmother
+steward_known -> washerwoman_townsfolk grandmother_grandchild
+knight -> sage
 knight_known -> 
 shugenja -> 
 general -> 
@@ -233,15 +236,15 @@ banshee_hasability ->
 
 # Experimental out
 hatter -> barber goon butler
-hatter_teapartytonight -> 
+hatter_teapartytonight -> barber_haircutstonight butler_master goon_drunk
 puzzlemaster -> sweetheart moonchild mathematician
-puzzlemaster_drunk -> 
-puzzlemaster_guessused -> 
-snitch -> 
-acrobat -> 
+puzzlemaster_drunk -> sweetheart_drunk mathematician_abnormal moonchild_dead
+puzzlemaster_guessused -> artist_noability seamstress_noability virgin_noability
+snitch -> goon recluse klutz
+acrobat -> klutz
 acrobat_dead -> 
-plaguedoctor -> 
-plaguedoctor_storytellerability -> 
+plaguedoctor -> barber
+plaguedoctor_storytellerability -> barber_haircutstonight
 ogre -> 
 heretic -> 
 damsel -> 
