@@ -51,9 +51,35 @@
     order: 2;
     color: red;
   }
+
+  div:has(> #build) {
+    position: fixed;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    right: 0;
+    bottom: 0;
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  #build {
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid darkolivegreen;
+    color: darkolivegreen;
+  }
+
+  #build:hover {
+    color: white;
+    background: darkolivegreen;
+  }
 </style>
 <div>
   <div id="root" >
   </div>
+  <div>
+    <button id="build">Build</button>
+  <div>
   <script type="module" src="./index.js"></script>
 </div>
