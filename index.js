@@ -2,11 +2,13 @@ import { build } from './lib/visualize.js';
 import script from './data/charming_idiots.v6.json' with {type: 'json'};
 
 let root = document.getElementById("root");
-let { save, load } = build(root, script);
-const debug = () => {
-  console.log(save());
-  setTimeout(debug, 1000);
-};
+let { done, save, load } = build(root, script);
+
+let builder = document.getElementById("build");
+builder.addEventListener("click", () => {
+  let d = save();
+  console.log(d);
+});
 
 const wait = (time) => new Promise((resolve) => {
     setTimeout(resolve, time)
