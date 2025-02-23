@@ -1,8 +1,9 @@
-import { build } from './lib/visualize.js';
+import { build } from './lib/picker.js';
 import script from './data/charming_idiots.v6.json' with {type: 'json'};
+import prefs from './data/preferences.json' with {type: 'json'};
 
 let root = document.getElementById("root");
-let { done, save, load } = build(root, script);
+let { done, save, load } = build(root, script, prefs);
 
 let builder = document.getElementById("build");
 builder.addEventListener("click", () => {
