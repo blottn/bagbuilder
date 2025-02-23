@@ -27,7 +27,7 @@
   }
 
   [preferred] {
-    order: -1;
+    order: -2;
   }
 
   [hideunpreferred] .proxy:not([preferred]) {
@@ -35,16 +35,16 @@
   }
 
   [state="picked"] {
-    order: -2;
+    order: -3;
     color: deeppink;
   }
 
   [state="unavailable"] {
-    order: 1;
+    order: 2;
     color: #aaa;
   }
   [state="inuse"] {
-    order: 2;
+    order: -1;
     color: red;
   }
 
