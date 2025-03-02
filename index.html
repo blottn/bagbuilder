@@ -48,18 +48,18 @@
     color: red;
   }
 
+  .control-window {
 
+  }
 
+  .picker {
+    width: 80%;
+    height: 100%;
 
-  div:has(> #build) {
-    position: fixed;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    right: 0;
-    bottom: 0;
-    background: white;
-    border-radius: 8px;
-    padding: 8px;
+    overflow: scroll;
+    border: 2px solid #0cf;
+    border-radius: 4px;
+    padding: 2px;
   }
 
   #build {
@@ -73,12 +73,18 @@
     color: white;
     background: darkolivegreen;
   }
+
+  #root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+  }
 </style>
-<div>
-  <div id="root" >
+<div id="root">
+  <div class="controls">
   </div>
-  <div>
-    <button id="build">Build</button>
-  <div>
+  <div class="picker" hideunpreferred >
+  </div>
   <script type="module" src="./index.js"></script>
 </div>

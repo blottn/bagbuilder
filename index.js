@@ -1,15 +1,14 @@
-import { build } from './lib/picker.js';
+import picker from './lib/picker.js';
+import controls from './lib/controls.js';
+
 import script from './data/charming_idiots.v6.json' with {type: 'json'};
 import prefs from './data/preferences.json' with {type: 'json'};
 
-let root = document.getElementById("root");
-let { done, save, load } = build(root, script, prefs);
+let pickerRoot = document.querySelector(".picker");
+let { done, save, load } = picker(pickerRoot, script, prefs);
 
-let builder = document.getElementById("build");
-builder.addEventListener("click", () => {
-  let d = save();
-  console.log(d);
-});
+let controlsRoot = document.querySelector(".controls");
+let ctrl = controls(controlsRoot, pickerRoot);
 
 const wait = (time) => new Promise((resolve) => {
     setTimeout(resolve, time)
