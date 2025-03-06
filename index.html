@@ -6,6 +6,15 @@
   p {
     font-size: 16px;
   }
+
+  .tokens {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding-right: 4px;
+  }
+
   .tok-block {
     border-left: 1px solid darkgrey;
     background: #f0f0f0;
@@ -22,12 +31,14 @@
   }
 
   .tok-header {
+    margin-top: 4px;
     font-size: 16px;
     font-weight: bold;
   }
 
   .proxy {
     font-size: 14px;
+    margin: 2px;
   }
 
   [preferred] {
@@ -62,10 +73,10 @@
   .picker {
     width: 80%;
     height: 100%;
-    box-sizing: border-box;
 
     overflow-y: scroll;
     overflow-x: clip;
+
     border: 2px solid #0cf;
     border-radius: 4px;
     padding: 2px;
