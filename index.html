@@ -7,19 +7,12 @@
     font-size: 16px;
   }
 
-  iframe:not([src]) {
-    display: none;
+  [scroll] {
+    overflow-y: scroll;
   }
 
-  iframe[src] {
-    position: fixed;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
-    border: 1px solid grey;
-
-    box-shadow: 0px 0px 8px;
+  [card] {
+    box-shadow: 0px 0px 10px lightgrey;
   }
 
   .controls {
@@ -34,6 +27,39 @@
 
   .controls > .checkbox > p {
     font-size: 13.333px;
+  }
+
+  .controls > #tokens-avail {
+    display: none;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+
+    border-radius:8px;
+    box-shadow: 0px 0px 10px lightgrey;
+    overflow-y: clip;
+    background-color: white;
+  }
+
+  .controls > #tokens-avail[active] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .avail-chars {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 8px;
+  }
+
+  .avail-chars > * {
+    padding: 3px;
+    border: 1px solid grey;
+    margin: 0px;
   }
 
   .tokens {
@@ -103,11 +129,8 @@
     width: 80%;
     height: 100%;
 
-    overflow-y: scroll;
     overflow-x: clip;
 
-    border: 2px solid #0cf;
-    border-radius: 4px;
     padding: 2px;
   }
 
@@ -131,7 +154,7 @@
   }
 </style>
 <div id="root">
-  <div class="picker" hideunpreferred >
+  <div class="picker" hideunpreferred scroll card>
   </div>
   <div class="controls">
   </div>
