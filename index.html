@@ -112,28 +112,35 @@
     color: var(--team-col);
   }
 
-  [team="townsfolk"] {
+  [team]:hover {
+    font-weight: bold;
+    border-radius: 0px 8px 0px 8px;
+    background-color: var(--team-col);
+    color: white;
+  }
+
+  [team="townsfolk"], .avail-char-tok:not([available])[team="townsfolk"]:hover {
     --team-col: #3302a1;
   }
 
-  [team="outsider"] {
+  [team="outsider"], .avail-char-tok:not([available])[team="outsider"]:hover {
     --team-col: blue;
   }
 
-  [team="minion"] {
+  [team="minion"], .avail-char-tok:not([available])[team="minion"]:hover {
     --team-col: #ff7777;
   }
 
-  [team="demon"] {
+  [team="demon"], .avail-char-tok:not([available])[team="demon"]:hover {
     --team-col: darkred;
   }
 
-  [team="traveler"] {
+  [team="traveler"], .avail-char-tok:not([available])[team="traveler"]:hover {
     --team-col: #cec600;
   }
 
   /* Selection */
-  .avail-char-tok:not([available]) {
+  .avail-char-tok:not([available]), .avail-char-tok[available]:hover {
     --team-col: darkgrey;
   }
 
