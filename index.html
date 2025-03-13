@@ -52,15 +52,83 @@
   .avail-chars {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 8px;
+    column-gap: 12px;
     row-gap: 8px;
   }
 
   .avail-chars > * {
-    padding: 3px;
+    padding: 4px;
     border: 1px solid grey;
     margin: 0px;
   }
+
+  /* Coloring */
+  [team] {
+    border: 1px solid;
+    border-radius: 8px 0px 8px 0px;
+    border-color: var(--team-col);
+    background-color: var(--team-bg);
+    color: var(--team-col);
+  }
+
+  [team="townsfolk"] {
+    --team-col: #3302a1;
+  }
+
+  [team="outsider"] {
+    --team-col: blue;
+  }
+
+  [team="minion"] {
+    --team-col: #ff7777;
+  }
+
+  [team="demon"] {
+    --team-col: darkred;
+  }
+
+  [team="traveler"] {
+    --team-col: #cec600;
+  }
+
+  /* Selection */
+  .avail-char-tok:not([available]) {
+    --team-col: darkgrey;
+  }
+
+  /* Sorting */
+  [sort="team"] > [team="townsfolk"] {
+    order: 0;
+  }
+  [sort="team"] > [team="outsider"] {
+    order: 1;
+  }
+  [sort="team"] > [team="minion"] {
+    order: 2;
+  }
+  [sort="team"] > [team="demon"] {
+    order: 3;
+  }
+  [sort="team"] > [team="traveler"] {
+    order: 4;
+  }
+
+  [sort="edition"] > [edition="tb"] {
+    order: 0;
+  }
+  [sort="edition"] > [edition="snv"] {
+    order: 1;
+  }
+  [sort="edition"] > [edition="bmr"] {
+    order: 2;
+  }
+  [sort="edition"] > [edition="kickstarter"] {
+    order: 3;
+  }
+  [sort="edition"] > [edition=""] {
+    order: 4;
+  }
+
 
   .tokens {
     display: flex;
