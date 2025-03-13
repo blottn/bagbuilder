@@ -114,9 +114,18 @@
 
   [team]:hover {
     font-weight: bold;
-    border-radius: 0px 8px 0px 8px;
     background-color: var(--team-col);
     color: white;
+  }
+
+  .avail-char-tok:not([available]), .avail-char-tok[available]:hover {
+    border-radius: 0px 8px 0px 8px;
+  }
+  .avail-char-tok[available], .avail-char-tok:not([available]):hover {
+    border-radius: 8px 0px 8px 0px;
+  }
+  .avail-char-tok:not([available]):hover, .avail-char-tok[available] {
+    box-shadow: 1px 1px 2px grey;
   }
 
   [team="townsfolk"], .avail-char-tok:not([available])[team="townsfolk"]:hover {
