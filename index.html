@@ -18,21 +18,42 @@
     box-shadow: 0px 0px 10px lightgrey;
   }
 
+  img.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    box-shadow:0px 0px 20px #ffd100;
+  }
+
+  img.logo:hover {
+    box-shadow: 0px 0px 50px violet;
+    position: relative;
+    right: 4px;
+    bottom: 4px;
+  }
+
   .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .buttons {
     display: flex;
     flex-direction: column;
     align-items: end;
   }
 
-  .controls > .checkbox {
+  .buttons > .checkbox {
     display: flex;
   }
 
-  .controls > .checkbox > p {
+  .buttons > .checkbox > p {
     font-size: 13.333px;
   }
 
-  .controls > #tokens-avail {
+  .buttons > #tokens-avail {
     display: none;
     position: fixed;
     left: 10%;
@@ -47,7 +68,7 @@
     background-color: white;
   }
 
-  .controls > #tokens-avail[active] {
+  .buttons > #tokens-avail[active] {
     display: flex;
     flex-direction: column;
   }
