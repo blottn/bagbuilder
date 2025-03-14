@@ -1,313 +1,351 @@
 <head>
   <title>Bag Builder</title>
+  <style>
+
+    [inactive] {
+      display: none;
+    }
+
+    * {
+      font-family: monospace;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    [scroll] {
+      overflow-y: scroll;
+    }
+
+    [card], [modal] {
+      box-shadow: 0px 0px 10px lightgrey;
+
+      border-radius:8px;
+      overflow-y: clip;
+      background-color: white;
+    }
+
+    [modal] {
+      position: fixed;
+      left: 10%;
+      top: 10%;
+      width: 80%;
+      height: 80%;
+    }
+   
+
+    .build-container {
+      padding: 20px;
+      position: relative;
+    }
+
+    .build-container > .build {
+      color: black;
+      font-weight: bold;
+      background-color: #ffd100;
+      border: 1px solid black;
+      border-radius: 4px 0px 4px 0px;
+      padding: 3px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      visibility: hidden;
+    }
+
+    .build-container > img:hover + .build {
+      visibility: visible;
+    }
+
+    img.logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      box-shadow:0px 0px 20px #ffd100;
+    }
+
+    img.logo:hover {
+      box-shadow: 0px 0px 50px violet;
+      position: relative;
+      right: 4px;
+      bottom: 4px;
+    }
+
+
+    .build-output:not([inactive]) {
+     
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+
+    .buttons > .checkbox {
+      display: flex;
+    }
+
+    .buttons > .checkbox > p {
+      font-size: 13.333px;
+    }
+
+    .tokens-avail:not([inactive]) {
+      display: flex;
+      flex-direction: column;
+
+      position: fixed;
+      left: 10%;
+      top: 10%;
+      width: 80%;
+      height: 80%;
+      padding: 10px;
+
+      border-radius:8px;
+      overflow-y: clip;
+      background-color: white;
+    }
+
+    .avail-chars-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .avail-chars-close {
+      align-self: flex-start;
+      border-radius: 4px;
+    }
+
+    .avail-chars-close:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .avail-chars-controls {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 8px;
+      margin: 8px 0px;
+      padding: 8px 0px;
+      border-top: 1px solid grey;
+      border-bottom: 1px solid grey;
+    }
+
+    .avail-chars-toggle {
+      background-color: white;
+      border-radius: 4px;
+      border-color: black;
+      padding: 4px 0px;
+    }
+    .avail-chars-toggle:hover {
+      background-color: black;
+      color: white;
+    }
+    .avail-chars-toggle > .script-name {
+      color: #c05bd6;
+      font-weight: bold;
+    }
+
+    .avail-chars {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 12px;
+      row-gap: 8px;
+    }
+
+    .avail-chars > * {
+      padding: 4px;
+      border: 1px solid grey;
+      margin: 0px;
+    }
+
+    /* Coloring */
+    [team] {
+      border: 1px solid;
+      border-radius: 8px 0px 8px 0px;
+      border-color: var(--team-col);
+      background-color: var(--team-bg);
+      color: var(--team-col);
+    }
+
+    [team]:hover {
+      font-weight: bold;
+      background-color: var(--team-col);
+      color: white;
+    }
+
+    .avail-char-tok:not([available]), .avail-char-tok[available]:hover {
+      border-radius: 0px 8px 0px 8px;
+    }
+    .avail-char-tok[available], .avail-char-tok:not([available]):hover {
+      border-radius: 8px 0px 8px 0px;
+    }
+    .avail-char-tok:not([available]):hover, .avail-char-tok[available] {
+      box-shadow: 1px 1px 2px grey;
+    }
+
+    [team="townsfolk"], .avail-char-tok:not([available])[team="townsfolk"]:hover {
+      --team-col: #3302a1;
+    }
+
+    [team="outsider"], .avail-char-tok:not([available])[team="outsider"]:hover {
+      --team-col: blue;
+    }
+
+    [team="minion"], .avail-char-tok:not([available])[team="minion"]:hover {
+      --team-col: #ff7777;
+    }
+
+    [team="demon"], .avail-char-tok:not([available])[team="demon"]:hover {
+      --team-col: darkred;
+    }
+
+    [team="traveler"], .avail-char-tok:not([available])[team="traveler"]:hover {
+      --team-col: #cec600;
+    }
+
+    /* Selection */
+    .avail-char-tok:not([available]), .avail-char-tok[available]:hover {
+      --team-col: darkgrey;
+    }
+
+    /* Sorting */
+    [sort="team"] > [team="townsfolk"] {
+      order: 0;
+    }
+    [sort="team"] > [team="outsider"] {
+      order: 1;
+    }
+    [sort="team"] > [team="minion"] {
+      order: 2;
+    }
+    [sort="team"] > [team="demon"] {
+      order: 3;
+    }
+    [sort="team"] > [team="traveler"] {
+      order: 4;
+    }
+
+    [sort="edition"] > [edition="tb"] {
+      order: 0;
+    }
+    [sort="edition"] > [edition="snv"] {
+      order: 1;
+    }
+    [sort="edition"] > [edition="bmr"] {
+      order: 2;
+    }
+    [sort="edition"] > [edition="kickstarter"] {
+      order: 3;
+    }
+    [sort="edition"] > [edition=""] {
+      order: 4;
+    }
+
+
+    .tokens {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+      padding-right: 4px;
+    }
+
+    .tok-block {
+      border-left: 1px solid darkgrey;
+      background: #f0f0f0;
+      padding-left: 4px;
+      margin-left: 8px;
+    }
+
+    .tok-proxies {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      align-items: center;
+      overflow-x: scroll;
+    }
+
+    .tok-header {
+      margin-top: 4px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .proxy {
+      color: var(--team-col);
+      border-radius: 4px;
+      border-color: var(--team-col);
+      padding: 4px;
+      font-size: 14px;
+      margin: 2px;
+    }
+
+    [preferred] {
+      order: -2;
+    }
+
+    [hideunpreferred] .proxy:not([preferred]):not([state="picked"]) {
+      display: none;
+    }
+
+    [state="picked"] {
+      order: -3;
+      background: var(--team-col);
+      color: white;
+    }
+
+    [state="unavailable"] {
+      order: 2;
+      color: #aaa;
+    }
+    [state="inuse"] {
+      order: -1;
+      --team-col: darkgrey;
+    }
+
+    .control-window {
+
+    }
+
+    .picker {
+      width: 80%;
+      height: 100%;
+
+      overflow-x: clip;
+
+      padding: 2px;
+    }
+
+    #root {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+  </style>
 </head>
-<style>
-  * {
-    font-family: monospace;
-  }
 
-  p {
-    font-size: 16px;
-  }
-
-  [scroll] {
-    overflow-y: scroll;
-  }
-
-  [card] {
-    box-shadow: 0px 0px 10px lightgrey;
-  }
-
-  img.logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    box-shadow:0px 0px 20px #ffd100;
-  }
-
-  img.logo:hover {
-    box-shadow: 0px 0px 50px violet;
-    position: relative;
-    right: 4px;
-    bottom: 4px;
-  }
-
-  .controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-  }
-
-  .buttons > .checkbox {
-    display: flex;
-  }
-
-  .buttons > .checkbox > p {
-    font-size: 13.333px;
-  }
-
-  .buttons > #tokens-avail {
-    display: none;
-    position: fixed;
-    left: 10%;
-    top: 10%;
-    width: 80%;
-    height: 80%;
-    padding: 10px;
-
-    border-radius:8px;
-    box-shadow: 0px 0px 10px lightgrey;
-    overflow-y: clip;
-    background-color: white;
-  }
-
-  .buttons > #tokens-avail[active] {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .avail-chars-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .avail-chars-close {
-    align-self: flex-start;
-    border-radius: 4px;
-  }
-
-  .avail-chars-close:hover {
-    background-color: black;
-    color: white;
-  }
-
-  .avail-chars-controls {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 8px;
-    margin: 8px 0px;
-    padding: 8px 0px;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-  }
-
-  .avail-chars-toggle {
-    background-color: white;
-    border-radius: 4px;
-    border-color: black;
-    padding: 4px 0px;
-  }
-  .avail-chars-toggle:hover {
-    background-color: black;
-    color: white;
-  }
-  .avail-chars-toggle > .script-name {
-    color: #c05bd6;
-    font-weight: bold;
-  }
-
-  .avail-chars {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 12px;
-    row-gap: 8px;
-  }
-
-  .avail-chars > * {
-    padding: 4px;
-    border: 1px solid grey;
-    margin: 0px;
-  }
-
-  /* Coloring */
-  [team] {
-    border: 1px solid;
-    border-radius: 8px 0px 8px 0px;
-    border-color: var(--team-col);
-    background-color: var(--team-bg);
-    color: var(--team-col);
-  }
-
-  [team]:hover {
-    font-weight: bold;
-    background-color: var(--team-col);
-    color: white;
-  }
-
-  .avail-char-tok:not([available]), .avail-char-tok[available]:hover {
-    border-radius: 0px 8px 0px 8px;
-  }
-  .avail-char-tok[available], .avail-char-tok:not([available]):hover {
-    border-radius: 8px 0px 8px 0px;
-  }
-  .avail-char-tok:not([available]):hover, .avail-char-tok[available] {
-    box-shadow: 1px 1px 2px grey;
-  }
-
-  [team="townsfolk"], .avail-char-tok:not([available])[team="townsfolk"]:hover {
-    --team-col: #3302a1;
-  }
-
-  [team="outsider"], .avail-char-tok:not([available])[team="outsider"]:hover {
-    --team-col: blue;
-  }
-
-  [team="minion"], .avail-char-tok:not([available])[team="minion"]:hover {
-    --team-col: #ff7777;
-  }
-
-  [team="demon"], .avail-char-tok:not([available])[team="demon"]:hover {
-    --team-col: darkred;
-  }
-
-  [team="traveler"], .avail-char-tok:not([available])[team="traveler"]:hover {
-    --team-col: #cec600;
-  }
-
-  /* Selection */
-  .avail-char-tok:not([available]), .avail-char-tok[available]:hover {
-    --team-col: darkgrey;
-  }
-
-  /* Sorting */
-  [sort="team"] > [team="townsfolk"] {
-    order: 0;
-  }
-  [sort="team"] > [team="outsider"] {
-    order: 1;
-  }
-  [sort="team"] > [team="minion"] {
-    order: 2;
-  }
-  [sort="team"] > [team="demon"] {
-    order: 3;
-  }
-  [sort="team"] > [team="traveler"] {
-    order: 4;
-  }
-
-  [sort="edition"] > [edition="tb"] {
-    order: 0;
-  }
-  [sort="edition"] > [edition="snv"] {
-    order: 1;
-  }
-  [sort="edition"] > [edition="bmr"] {
-    order: 2;
-  }
-  [sort="edition"] > [edition="kickstarter"] {
-    order: 3;
-  }
-  [sort="edition"] > [edition=""] {
-    order: 4;
-  }
-
-
-  .tokens {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 16px;
-    padding-right: 4px;
-  }
-
-  .tok-block {
-    border-left: 1px solid darkgrey;
-    background: #f0f0f0;
-    padding-left: 4px;
-    margin-left: 8px;
-  }
-
-  .tok-proxies {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 8px;
-    align-items: center;
-    overflow-x: scroll;
-  }
-
-  .tok-header {
-    margin-top: 4px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .proxy {
-    color: var(--team-col);
-    border-radius: 4px;
-    border-color: var(--team-col);
-    padding: 4px;
-    font-size: 14px;
-    margin: 2px;
-  }
-
-  [preferred] {
-    order: -2;
-  }
-
-  [hideunpreferred] .proxy:not([preferred]):not([state="picked"]) {
-    display: none;
-  }
-
-  [state="picked"] {
-    order: -3;
-    background: var(--team-col);
-    color: white;
-  }
-
-  [state="unavailable"] {
-    order: 2;
-    color: #aaa;
-  }
-  [state="inuse"] {
-    order: -1;
-    --team-col: darkgrey;
-  }
-
-  .control-window {
-
-  }
-
-  .picker {
-    width: 80%;
-    height: 100%;
-
-    overflow-x: clip;
-
-    padding: 2px;
-  }
-
-  #build {
-    background-color: white;
-    border-radius: 2px;
-    border: 1px solid darkolivegreen;
-    color: darkolivegreen;
-  }
-
-  #build:hover {
-    color: white;
-    background: darkolivegreen;
-  }
-
-  #root {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
-<div id="root">
-  <div class="picker" hideunpreferred scroll card>
+<body>
+  <div id="root">
+    <div class="picker" hideunpreferred scroll card>
+    </div>
+    <div class="controls">
+    </div>
+    <script type="module" src="./index.js"></script>
   </div>
-  <div class="controls">
-  </div>
-  <script type="module" src="./index.js"></script>
-</div>
+</body>

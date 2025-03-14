@@ -5,9 +5,14 @@ import { loadScript } from './lib/script.js';
 import picker from './lib/picker.js';
 import controls from './lib/controls.js';
 
+// UI utility
+import { initHandlers } from './lib/modal.js';
+
 // Data
 import script from './data/charming_idiots.v6.json' with {type: 'json'};
 import prefs from './data/preferences.json' with {type: 'json'};
+
+initHandlers();
 
 let controlsRoot = document.querySelector(".controls");
 let pickerRoot = document.querySelector(".picker");
