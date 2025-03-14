@@ -220,6 +220,10 @@
   }
 
   .proxy {
+    color: var(--team-col);
+    border-radius: 4px;
+    border-color: var(--team-col);
+    padding: 4px;
     font-size: 14px;
     margin: 2px;
   }
@@ -228,15 +232,13 @@
     order: -2;
   }
 
-  [hideunpreferred] .proxy:not([preferred]) {
+  [hideunpreferred] .proxy:not([preferred]):not([state="picked"]) {
     display: none;
   }
 
   [state="picked"] {
     order: -3;
-    background: #7bb03c;
-    border-radius: 4px;
-    padding: 4px;
+    background: var(--team-col);
     color: white;
   }
 
@@ -246,7 +248,7 @@
   }
   [state="inuse"] {
     order: -1;
-    color: red;
+    --team-col: darkgrey;
   }
 
   .control-window {
