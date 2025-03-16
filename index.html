@@ -74,11 +74,19 @@
 
 
     .build-output:not([inactive]) {
-     
       padding: 10px;
       display: flex;
       flex-direction: column;
+    }
 
+    .build-output > h3 {
+      border-bottom: 1px solid grey;
+    }
+
+    .build-output > .token-replacements {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      overflow-y: scroll;
     }
 
     .controls {
